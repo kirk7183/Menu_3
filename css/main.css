@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+  --text-primary: #000;
+  --text-secondary: #fff;
+  --bg-primary: #0100e8;
+  --bg-secondary: #d20001;
+  --bg-alternative: #fff;
+}
+
+*,
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+}
+
+/*when menu need to go off screen*/
+ul {
+  position: fixed;
+  width: 100%;
+  top: -100%;
+  padding: 10px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--bg-secondary);
+  box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  transition: all 1s 1s;
+  -webkit-transition: all 1s 1s;
+  -moz-transition: all 1s 1s;
+  -ms-transition: all 1s 1s;
+  -o-transition: all 1s 1s;
+}
+
+/*when menu need to come to screen*/
+ul.active {
+  top: 0;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+a {
+  text-decoration: none;
+  font-size: calc(1rem + 1vw);
+  color: rgba(1, 0, 232, 0.4);
+}
+
+li.active a {
+  color: var(--bg-primary);
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+.menu img {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  padding: 3px;
+  width: calc(35px + 1vw);
+  height: calc(35px + 1vw);
+  border: 2px solid rgba(210, 0, 1, 0.2);
+  border-radius: 50%;
+  object-fit: contain;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: border 1s;
+  -webkit-transition: border 1s;
+  -moz-transition: border 1s;
+  -ms-transition: border 1s;
+  -o-transition: border 1s;
+}
+
+.menu.active img {
+  border: 2px solid var(--bg-alternative);
+}
+
+/*for arrows...take some and just delete 3rd row so you can get corners you need...https://css-tricks.com/snippets/css/css-triangle/
+/*when menu icon its not clicked (ul not "active")*/
+.arrow-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-right: calc(0px + 0vw) solid transparent;
+  border-top: calc(0px + 0vw) solid var(--bg-secondary);
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+/*when showing after click on menu icon (ul is "active)*/
+ul.active .arrow-top-left {
+  border-right: calc(95px + 5vw) solid transparent;
+  border-top: calc(95px + 5vw) solid var(--bg-secondary);
+  transition: all 1s 1s;
+  -webkit-transition: all 1s 1s;
+  -moz-transition: all 1s 1s;
+  -ms-transition: all 1s 1s;
+  -o-transition: all 1s 1s;
+}
+
+/*when menu icon its not clicked (ul not "active")*/
+.arrow-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: calc(0px + 0vw) solid transparent;
+  border-bottom: calc(0px + 0vw) solid var(--bg-secondary);
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+/*when showing after click on menu icon (ul is "active)*/
+ul.active .arrow-bottom-right {
+  border-left: calc(95px + 5vw) solid transparent;
+  border-bottom: calc(95px + 5vw) solid var(--bg-secondary);
+  transition: all 1s 1s;
+  -webkit-transition: all 1s 1s;
+  -moz-transition: all 1s 1s;
+  -ms-transition: all 1s 1s;
+  -o-transition: all 1s 1s;
+}
